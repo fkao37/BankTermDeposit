@@ -1,8 +1,7 @@
 
 ## <span style="font-weight:bold;">Logistic Regression, Decision Tree, KNearest Neighbors, and Support Vector Machines Classifiers </span>
 ### <span style="font-weight:bold;">Overview</span>
-This project compares the performance of classic classifiers: Logistic Regression, Decision Tree, KNearest Neighbors, and Support Vector Machines
-using dataset provided by a Portuguese banking institution.  A configuration .ini file is used to selectively control the regressor used allowing 
+This project compares the performance of 4 classic classifiers: Logistic Regression, Decision Tree, KNearest Neighbors, and Support Vector Machines using dataset provided by a Portuguese banking institution.  A configuration .ini file is used to selectively control the regressor used allowing 
 individual debugging of each classifier model.
 Two generic classification functions are defined, the first performing the basic model classification based on the regressor passed in.  The second 
 function utilizes the grid hyper-parameters passed into to perform a GridSearch using the regressor.  Classification model training times, and 
@@ -11,10 +10,9 @@ the model's classification report is returned for comparasions at the end.
 Classifier performance is performed by comparing Accuracy, Precision, Recall, F1-scoring, model training time from the model classification process.
 
 ### <span style="font-weight:bold;">Source:</span>  <span style="color:black;">https://archive.ics.uci.edu/dataset/222/bank+marketing</span>
-The data is a "Multivariate" business use data from direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based 
-on phone calls. Often, more than one contact to the same client was required, in order to access if the product (bank term deposit) would be 
-('yes') or not ('no') subscribed. This project uses the dataset: bank-addition-full.csv with 41,188 rows with 20 columns, ordered by date (from May 2008 to 
-November 2010).  The classification goal is to predict if the client will subscribe (yes/no) a term deposit (variable y).
+This “Multivariate” business data originates from direct marketing campaigns conducted by a Portuguese banking institution. These marketing campaigns were based on phone calls, often requiring multiple contacts with the same client to determine if the product (a bank term deposit) would be subscribed to (‘yes’) or not (‘no’).
+
+This project utilizes the dataset bank-addition-full.csv, which contains 41,188 rows and 20 columns, ordered by date from May 2008 to November 2010. The classification goal is to predict whether the client will subscribe (‘yes’/‘no’) to a term deposit (variable y).
 
 ### <span style="font-weight:bold;">Project Organization</span>
 The project is organized with the objective that it to be used in an automated environment.  Individual directories, configuration files, and trained models
@@ -24,9 +22,9 @@ can be wrote out and read back for testing new data.
 The configuration file serves multiple purposes: it identifies the source of the model training data, controls the train/test data split ratio, manages verbosity, 
 and oversees the activation training and testing of the classifier. Additionally, it specifies the name of the trained model for local storage.
 #### <span style="font-weight:bold;">Trained Models: </span> specified by model_outputFile in .ini
-Generated for each of the classifier activated in the configuration file.  Example:  <model_outputFile>_LogisticRegression<timestamp>.pkl.
+Generated for each of the classifier activated in the configuration file.  Example:  `<model_outputFile>_LogisticRegression<timestamp>.pkl`.
 These trained model files are stored in the local directory.  These models can be read back and used for testing to classify new unknown datasets with
-the same data frame format.
+the same data frame format.  In addition to the specific regression models, the all the trained models are also wrote out to storage together and can be accessed with the format: `<model_outFile_<timestamp>.pkl`
 #### <span style="font-weight:bold;">Results</span>
 Classification results from the selected classifiers are tabulated and printed at the end of the process run.
 
